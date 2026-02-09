@@ -16,7 +16,11 @@ Simple static HTML-based structure that showcases various Claude Code configurat
 │       ├── review.md          # /review - Code review
 │       ├── simplify.md        # /simplify - Code simplification
 │       ├── verify.md          # /verify - HTML verification
-│       └── plan.md            # /plan - Implementation planning
+│       ├── plan.md            # /plan - Implementation planning
+│       ├── commit-push-pr.md  # /commit-push-pr - Commit, push & create PR
+│       └── create-worktree.md # /create-worktree - Create branch & worktree
+│   └── scripts/
+│       └── notify.sh          # Notification hook script (iTerm2 tab name)
 ├── .mcp.json                  # MCP server config (template)
 ├── apps/
 │   └── index.html             # Main HTML
