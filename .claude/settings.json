@@ -72,7 +72,11 @@
       "Bash(git config --get *)",
       "Bash(git -C * config --get *)",
       "Bash(git config --list*)",
-      "Bash(git -C * config --list*)"
+      "Bash(git -C * config --list*)",
+      "Bash(git worktree list*)",
+      "Bash(git -C * worktree list*)",
+      "Bash(git worktree add *)",
+      "Bash(git -C * worktree add *)"
     ],
     "deny": [
       "Bash(git push -f *)",
@@ -106,7 +110,9 @@
       "Bash(gh release create*)",
       "Bash(gh release delete*)",
       "Bash(gh repo create*)",
-      "Bash(gh repo delete*)"
+      "Bash(gh repo delete*)",
+      "Bash(git worktree remove *)",
+      "Bash(git -C * worktree remove *)"
     ]
   },
   "hooks": {
@@ -127,7 +133,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"$CLAUDE_NOTIFICATION\" with title \"Claude Code\"'"
+            "command": ".claude/scripts/notify.sh \"$CLAUDE_NOTIFICATION\""
           }
         ]
       }
