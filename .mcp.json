@@ -8,7 +8,7 @@
       "command": "npx",
       "args": ["-y", "@anthropic-ai/mcp-github@latest"],
       "env": {
-        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+        "GITHUB_TOKEN": ""
       }
     }
   }

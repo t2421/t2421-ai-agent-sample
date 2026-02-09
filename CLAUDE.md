@@ -26,6 +26,9 @@ Simple static HTML-based structure that showcases various Claude Code configurat
 │       ├── notify.sh          # Notification hook script (iTerm2 tab name)
 │       └── auto-format.sh     # Auto-format hook (Prettier on Write)
 ├── .mcp.json                  # MCP server config (Fetch + GitHub)
+├── .github/
+│   └── workflows/
+│       └── claude-md-reminder.yml  # CLAUDE.md update reminder on PR merge
 ├── apps/
 │   └── index.html             # Main HTML
 └── .gitignore
@@ -118,7 +121,8 @@ Simple static HTML-based structure that showcases various Claude Code configurat
 
 - Fetch MCP server: enables web content retrieval
 - GitHub MCP server: enables direct Issue/PR management
-- Configuration is in `.mcp.json`, tokens are managed via environment variables
+- Configuration is in `.mcp.json`
+- To use the GitHub server, set your token directly in `.mcp.json` (gitignored via `.claude/settings.local.json`) or replace the empty `GITHUB_TOKEN` value
 
 ### 10. Verification
 

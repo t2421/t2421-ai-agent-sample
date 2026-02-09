@@ -4,7 +4,7 @@ Verify all HTML files in the project using a subagent for parallel validation.
 
 ### 1. Discover HTML files
 
-Run `find apps -name "*.html" -type f` to list all HTML files.
+Use the **Glob** tool with pattern `apps/**/*.html` to list all HTML files.
 
 ### 2. Run automated validation
 

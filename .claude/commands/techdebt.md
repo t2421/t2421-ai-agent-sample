@@ -52,7 +52,7 @@ Summary:
 [DUPL] file1.html + file2.html — similar block (lines 10-25)
 [UNUSED] assets/old-logo.png — not referenced
 [LINT] file.html:15 — html-validate: element "center" is deprecated
-[PATTERN] file.html:15 — deprecated <center> tag
+[PATTERN] file.html:30 — inline style attribute should be moved to CSS
 [DRIFT] CLAUDE.md lists verify-all.md but file missing
 
 === End of Report ===
