@@ -122,7 +122,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo \"[Hook] File written: $CLAUDE_FILE_PATH\""
+            "command": ".claude/scripts/auto-format.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx --yes html-validate apps/**/*.html 2>&1 || echo '[Stop Hook] HTML validation failed — please fix before ending session'"
           }
         ]
       }
