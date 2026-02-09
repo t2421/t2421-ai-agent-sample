@@ -41,6 +41,12 @@ Simple static HTML-based structure that showcases various Claude Code configurat
 - Do not chain commands with `&&`. Execute `git add` and `git commit` in separate Bash calls
 - Destructive operations (`rm -rf`, `git push --force`, `git reset --hard`) are prohibited
 
+### Pre-work Confirmation
+
+- Before starting planning or implementation, always run `git branch --show-current` and `pwd`
+- Present the current branch and directory to the user and ask for confirmation before proceeding
+- If the user is on `main`, suggest creating a new branch or worktree first
+
 ### Commit Rules
 
 - Only create commits when explicitly requested by the user

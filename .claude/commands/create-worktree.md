@@ -20,14 +20,32 @@ Branch name (optional): $ARGUMENTS
 - Run `git branch --list $BRANCH` to check the branch does not already exist
 - If the branch already exists, inform the user and stop
 
-### 4. Create worktree
+### 4. Save uncommitted changes
+- Run `git status --porcelain` to check for uncommitted changes (staged, unstaged, and untracked)
+- If there are uncommitted changes:
+  1. Record the list of changed/untracked files for later
+  2. Run `git stash --include-untracked` to temporarily save all changes
+- If there are no uncommitted changes, skip this step
+
+### 5. Create worktree
 - Run `git worktree add .worktrees/$BRANCH -b $BRANCH`
   - This creates the new branch and the worktree in one step
 - Confirm creation by running `ls .worktrees/$BRANCH`
 
-### 5. Report
-- Print the worktree path: `.worktrees/$BRANCH`
-- Suggest the user open a new terminal tab/window and `cd` into the worktree directory
+### 6. Restore uncommitted changes to the new worktree
+- If changes were stashed in step 4:
+  1. Run `git stash show --name-only` to confirm stash contents
+  2. Run `cd .worktrees/$BRANCH` to move into the new worktree
+  3. Run `git stash pop` to apply the stashed changes into the new worktree
+  4. Verify with `git status` that the changes are present
+- If no changes were stashed, just run `cd .worktrees/$BRANCH`
+
+### 7. Report
+- Confirm that the working directory is now `.worktrees/$BRANCH` (run `pwd`)
+- Print a summary:
+  - Worktree path
+  - Branch name
+  - Whether uncommitted changes were carried over
 - Remind the user they can run a separate Claude Code instance in the worktree
 
 ## Branch naming rules
@@ -41,5 +59,6 @@ Branch name (optional): $ARGUMENTS
 ## Rules
 
 - Do NOT chain commands with `&&`
-- Do NOT switch the current working directory with `cd`
+- After creation, always `cd` into the new worktree directory so subsequent work happens there
+- If `git stash pop` fails due to conflicts, inform the user and leave the stash intact
 - If `.worktrees` is not in `.gitignore`, warn the user to add it
