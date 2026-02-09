@@ -7,5 +7,15 @@
 </head>
 <body>
   <p>It works</p>
+  <p id="datetime"></p>
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const jst = now.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
+      document.getElementById('datetime').textContent = jst;
+    }
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
 </body>
 </html>

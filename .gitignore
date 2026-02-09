@@ -2,3 +2,5 @@
 CLAUDE.local.md
 .DS_Store
 .worktrees
+node_modules
+test-results
