@@ -21,11 +21,16 @@ Branch name (optional): $ARGUMENTS
 - If it fails due to uncommitted changes, inform the user and ask whether to force removal with `--force`
 
 ### 4. Delete branch
-- Ask the user whether to also delete the branch
+- Ask the user whether to also delete the local branch
 - If yes, run `git branch -d $BRANCH`
 - If the branch is not fully merged, inform the user and ask whether to force delete with `-D`
 
-### 5. Report
+### 5. Delete remote branch
+- Check if the remote branch exists with `git branch -r --list origin/$BRANCH`
+- If it exists, ask the user whether to also delete the remote branch
+- If yes, run `git push origin --delete $BRANCH`
+
+### 6. Report
 - Confirm the worktree and branch have been removed
 - Run `git worktree list` to show remaining worktrees
 

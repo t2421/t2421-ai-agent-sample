@@ -12,14 +12,14 @@ Simple static HTML-based structure that showcases various Claude Code configurat
 ├── CLAUDE.md                  # This file (AI project instructions)
 ├── .claude/
 │   ├── settings.json          # Permission management & Hooks config
-│   └── commands/              # Slash command definitions
-│       ├── review.md          # /review - Code review
-│       ├── simplify.md        # /simplify - Code simplification
-│       ├── verify.md          # /verify - HTML verification
-│       ├── plan.md            # /plan - Implementation planning
-│       ├── commit-push-pr.md  # /commit-push-pr - Commit, push & create PR
-│       ├── create-worktree.md # /create-worktree - Create branch & worktree
-│       └── delete-worktree.md # /delete-worktree - Delete worktree & branch
+│   ├── commands/              # Slash command definitions
+│   │   ├── review.md          # /review - Code review
+│   │   ├── simplify.md        # /simplify - Code simplification
+│   │   ├── verify.md          # /verify - HTML verification
+│   │   ├── plan.md            # /plan - Implementation planning
+│   │   ├── commit-push-pr.md  # /commit-push-pr - Commit, push & create PR
+│   │   ├── create-worktree.md # /create-worktree - Create branch & worktree
+│   │   └── delete-worktree.md # /delete-worktree - Delete worktree & branch
 │   └── scripts/
 │       └── notify.sh          # Notification hook script (iTerm2 tab name)
 ├── .mcp.json                  # MCP server config (template)
