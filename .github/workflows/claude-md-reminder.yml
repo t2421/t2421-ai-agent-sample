@@ -1,0 +1,38 @@
+name: CLAUDE.md Update Reminder
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  remind-claude-md-update:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for CLAUDE.md changes
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect if CLAUDE.md was updated
+        id: check
+        run: |
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.merge_commit_sha }}"
+          if git diff --name-only "$BASE_SHA" "$HEAD_SHA" | grep -q "^CLAUDE.md$"; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Post reminder comment
+        if: steps.check.outputs.changed == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.payload.pull_request.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '📝 **CLAUDE.md Reminder**: This PR was merged without updating `CLAUDE.md`. If this PR introduced new patterns, conventions, or lessons learned, consider updating `CLAUDE.md` so Claude can learn from them.'
+            })
