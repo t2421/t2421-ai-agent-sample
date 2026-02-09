@@ -2,20 +2,20 @@
 allowed-tools: Read, Glob, Grep, WebFetch, WebSearch
 ---
 
-以下の要件に対する実装計画を策定してください。コードの変更は行わず、計画のみを出力してください。
+Create an implementation plan for the following requirements. Do not make any code changes; output the plan only.
 
-要件: $ARGUMENTS
+Requirements: $ARGUMENTS
 
-## 計画に含める項目
+## Items to Include in the Plan
 
-1. **現状分析**: 関連する既存コードの構造と依存関係
-2. **変更方針**: どのようなアプローチで実装するか（複数案がある場合は比較）
-3. **変更対象ファイル**: 新規作成・更新するファイルの一覧
-4. **実装ステップ**: 順序付きの作業リスト
-5. **リスク・注意点**: 破壊的変更、後方互換性、パフォーマンスへの影響
+1. **Current State Analysis**: Structure and dependencies of related existing code
+2. **Approach**: How to implement (compare alternatives if multiple approaches exist)
+3. **Affected Files**: List of files to create or modify
+4. **Implementation Steps**: Ordered task list
+5. **Risks & Considerations**: Breaking changes, backward compatibility, performance impact
 
-## ルール
+## Rules
 
-- このコマンドではコードの変更を行わない（読み取り専用）
-- 計画はマークダウン形式で出力する
-- ユーザーが計画を承認してから実装に進む
+- This command does not make any code changes (read-only)
+- Output the plan in markdown format
+- Proceed with implementation only after user approval

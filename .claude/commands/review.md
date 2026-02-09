@@ -1,24 +1,24 @@
-指定されたファイルのコードレビューを実施してください。
+Perform a code review on the specified file.
 
-レビュー対象: $ARGUMENTS
+Target: $ARGUMENTS
 
-以下の観点で分析し、問題があれば具体的な改善案とともに報告してください:
+Analyze from the following perspectives and report any issues with specific suggestions for improvement:
 
-## レビュー観点
+## Review Criteria
 
-1. **バグ・論理エラー**: 実行時エラーや意図しない動作につながるコード
-2. **可読性**: 変数名・関数名の適切さ、コードの構造化
-3. **セキュリティ**: XSS、インジェクション、安全でない入力処理
-4. **パフォーマンス**: 不要なDOM操作、メモリリーク、非効率なアルゴリズム
-5. **アクセシビリティ**: HTMLのセマンティクス、ARIA属性、alt属性
+1. **Bugs & Logic Errors**: Code that could lead to runtime errors or unintended behavior
+2. **Readability**: Appropriateness of variable/function names, code structure
+3. **Security**: XSS, injection, unsafe input handling
+4. **Performance**: Unnecessary DOM operations, memory leaks, inefficient algorithms
+5. **Accessibility**: HTML semantics, ARIA attributes, alt attributes
 
-## 出力フォーマット
+## Output Format
 
-各問題について以下の形式で報告:
+Report each issue in the following format:
 
-- **深刻度**: Critical / Warning / Info
-- **箇所**: ファイル名:行番号
-- **問題**: 問題の説明
-- **改善案**: 具体的な修正提案
+- **Severity**: Critical / Warning / Info
+- **Location**: filename:line_number
+- **Issue**: Description of the problem
+- **Suggestion**: Specific fix proposal
 
-問題がない場合はその旨を報告してください。
+If no issues are found, report that as well.

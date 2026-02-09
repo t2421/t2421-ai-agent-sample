@@ -1,32 +1,32 @@
-指定されたHTMLファイルの検証を実施してください。
+Verify the specified HTML file.
 
-対象: $ARGUMENTS
+Target: $ARGUMENTS
 
-## 検証項目
+## Verification Items
 
-### 1. HTML構文チェック
-- DOCTYPE宣言の有無
-- タグの正しい入れ子構造
-- 必須属性の有無（img の alt、a の href 等）
-- 非推奨タグ・属性の使用
+### 1. HTML Syntax Check
+- Presence of DOCTYPE declaration
+- Correct tag nesting structure
+- Required attributes (img alt, a href, etc.)
+- Use of deprecated tags or attributes
 
-### 2. アクセシビリティ（WCAG 2.1 準拠チェック）
-- 見出しの階層構造（h1〜h6の順序）
-- フォーム要素の label 関連付け
-- 画像の代替テキスト
-- 色のコントラスト比への言及
-- キーボード操作への配慮
+### 2. Accessibility (WCAG 2.1 Compliance Check)
+- Heading hierarchy (h1-h6 order)
+- Form element label associations
+- Image alternative text
+- Color contrast ratio considerations
+- Keyboard navigation support
 
-### 3. SEO基本チェック
-- title タグの有無と内容
-- meta description の有無
-- lang 属性の指定
-- 見出し構造の適切さ
+### 3. Basic SEO Check
+- Presence and content of title tag
+- Presence of meta description
+- lang attribute specification
+- Appropriate heading structure
 
-### 4. パフォーマンス
-- 不要なリソースの読み込み
-- 画像の最適化への言及
+### 4. Performance
+- Unnecessary resource loading
+- Image optimization considerations
 
-## 出力フォーマット
+## Output Format
 
-各項目について Pass / Fail / Warning で判定し、Fail・Warning の場合は改善案を提示してください。
+Rate each item as Pass / Fail / Warning, and provide improvement suggestions for Fail and Warning items.

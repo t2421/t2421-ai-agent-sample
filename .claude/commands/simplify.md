@@ -1,16 +1,16 @@
-指定されたファイルのコードを簡素化・リファクタリングしてください。
+Simplify and refactor the code in the specified file.
 
-対象: $ARGUMENTS
+Target: $ARGUMENTS
 
-## 簡素化の方針
+## Simplification Approach
 
-1. **冗長なコードの削除**: 未使用の変数、到達不能コード、重複ロジック
-2. **可読性の向上**: 複雑な条件分岐の整理、適切な命名への変更
-3. **モダンな書き方への変換**: 古い構文をモダンなパターンに置換
-4. **構造の改善**: 長すぎる関数の分割、責務の明確化
+1. **Remove redundant code**: Unused variables, unreachable code, duplicate logic
+2. **Improve readability**: Simplify complex conditionals, rename to clearer names
+3. **Modernize syntax**: Replace legacy patterns with modern equivalents
+4. **Improve structure**: Split overly long functions, clarify responsibilities
 
-## ルール
+## Rules
 
-- 動作を変えない（リファクタリングのみ）
-- 変更箇所ごとに理由を説明する
-- 一度に大きく変えすぎない
+- Do not change behavior (refactoring only)
+- Explain the reason for each change
+- Avoid making too many changes at once

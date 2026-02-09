@@ -1,68 +1,68 @@
-# CLAUDE.md - プロジェクト指示書
+# CLAUDE.md - Project Instructions
 
-## プロジェクト概要
+## Project Overview
 
-Claude Code ベストプラクティスのサンプルプロジェクト。
-静的HTMLベースのシンプルな構成で、Claude Codeの各種設定パターンを実演する。
+A sample project demonstrating Claude Code best practices.
+Simple static HTML-based structure that showcases various Claude Code configuration patterns.
 
-## ディレクトリ構成
+## Directory Structure
 
 ```
 .
-├── CLAUDE.md                  # このファイル（AI向けプロジェクト指示書）
+├── CLAUDE.md                  # This file (AI project instructions)
 ├── .claude/
-│   ├── settings.json          # 権限管理・Hooks設定
-│   └── commands/              # スラッシュコマンド定義
-│       ├── review.md          # /review - コードレビュー
-│       ├── simplify.md        # /simplify - コード簡素化
-│       ├── verify.md          # /verify - HTML検証
-│       └── plan.md            # /plan - 実装計画策定
-├── .mcp.json                  # MCPサーバー設定（テンプレート）
+│   ├── settings.json          # Permission management & Hooks config
+│   └── commands/              # Slash command definitions
+│       ├── review.md          # /review - Code review
+│       ├── simplify.md        # /simplify - Code simplification
+│       ├── verify.md          # /verify - HTML verification
+│       └── plan.md            # /plan - Implementation planning
+├── .mcp.json                  # MCP server config (template)
 ├── apps/
-│   └── index.html             # メインHTML
+│   └── index.html             # Main HTML
 └── .gitignore
 ```
 
-## コーディング規約
+## Coding Conventions
 
-- インデント: スペース2つ
-- HTMLファイル: lang="ja"を指定、UTF-8エンコーディング
-- コミットメッセージ: 英語、動詞始まり（Add / Update / Fix / Remove）
+- Indentation: 2 spaces
+- HTML files: specify lang="ja", UTF-8 encoding
+- Commit messages: English, start with a verb (Add / Update / Fix / Remove)
 
-## AI向け指示
+## AI Instructions
 
-### コマンド実行ルール
+### Command Execution Rules
 
-- `&&` でコマンドをチェインしない。`git add` と `git commit` は別々のBash呼び出しで実行すること
-- 破壊的操作（`rm -rf`、`git push --force`、`git reset --hard`）は実行禁止
+- Do not chain commands with `&&`. Execute `git add` and `git commit` in separate Bash calls
+- Destructive operations (`rm -rf`, `git push --force`, `git reset --hard`) are prohibited
 
-### コミットルール
+### Commit Rules
 
-- ユーザーから明示的に依頼された場合のみコミットを作成する
-- コミットメッセージは簡潔に、変更の「なぜ」を記述する
+- Only create commits when explicitly requested by the user
+- Keep commit messages concise, describing the "why" of the change
 
-## 開発ワークフロー指針
+## Development Workflow Guidelines
 
-### Plan Mode 活用（Practice #4）
+### Plan Mode (Practice #4)
 
-- 新機能や複数ファイルにまたがる変更は、まず Plan Mode で設計してから実装する
-- `/plan` スラッシュコマンドで読み取り専用の計画策定が可能
+- For new features or changes spanning multiple files, design in Plan Mode first before implementing
+- The `/plan` slash command enables read-only planning
 
-### 並列作業（Practice #1）
+### Parallel Execution (Practice #1)
 
-- 独立したタスクは複数のClaude Codeインスタンスで並列実行可能
-- Notification hookにより作業完了時にmacOS通知を受け取れる
-- Git worktreeを使えばブランチごとに別ディレクトリで並行作業できる
+- Independent tasks can be run in parallel across multiple Claude Code instances
+- The Notification hook sends macOS notifications when AI work completes
+- Git worktree allows parallel work in separate directories per branch
 
-### モデル選択（Practice #2）
+### Model Selection (Practice #2)
 
-- 設計・計画: Opus（高精度な推論が必要な場面）
-- 実装・コーディング: Sonnet（速度とコストのバランス）
-- 軽微な修正・検索: Haiku（高速・低コスト）
+- Design & planning: Opus (when high-precision reasoning is needed)
+- Implementation & coding: Sonnet (balance of speed and cost)
+- Minor fixes & searches: Haiku (fast & low cost)
 
-## MCP統合（Practice #9）
+## MCP Integration (Practice #9)
 
-`.mcp.json` にMCPサーバーを設定可能。追加例:
+MCP servers can be configured in `.mcp.json`. Examples:
 
 ```json
 {
